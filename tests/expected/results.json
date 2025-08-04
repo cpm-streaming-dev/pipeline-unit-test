@@ -1,0 +1,27 @@
+  [
+    {
+      "mfec_case": 1,
+      "topic_name": "MFEC_TD_STG_10",
+      "fields": {
+        "field_03": 123.45
+      }
+    },
+    {
+      "mfec_case": 3,
+      "topic_name": "MFEC_TD_STG_10",
+      "fields": {
+        "field_02": "wagyu",
+        "field_03": 123.45
+      }
+    },
+    {
+      "mfec_case": 2,
+      "topic_name": "MFEC_TD_STG_10",
+      "fields": {
+        "field_01": 5,
+        "field_02": "kee",
+        "field_03": 123.45,
+        "field_04": "TEST_CASE_02"
+      }
+    }
+  ]

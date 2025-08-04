@@ -1,0 +1,32 @@
+[
+  {
+    "mfec_case": 1,
+    "pipeline_name": "MFEC_TD_STG_10",
+    "fields": {
+      "field_01": 1,
+      "field_02": "gobe",
+      "field_03": 123.45,
+      "field_04": "TEST_CASE_01"
+    }
+  },
+  {
+    "mfec_case": 3,
+    "pipeline_name": "MFEC_TD_STG_10",
+    "fields": {
+      "field_01": 4,
+      "field_02": "wagyu",
+      "field_03": 123.45,
+      "field_04": "TEST_CASE_03"
+    }
+  },
+  {
+    "mfec_case": 2,
+    "pipeline_name": "MFEC_TD_STG_10",
+    "fields": {
+      "field_01": 5,
+      "field_02": "kee",
+      "field_03": 123.45,
+      "field_04": "TEST_CASE_02"
+    }
+  }
+]
