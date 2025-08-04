@@ -1,0 +1,194 @@
+# .dockerignore
+
+# =================================================================
+# SECURITY - Secrets and Sensitive Files
+# =================================================================
+.streamlit/secrets.toml
+secrets/
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+credentials.json
+service-account.json
+
+# =================================================================
+# Development Files
+# =================================================================
+.git/
+.gitignore
+README.md
+*.md
+CHANGELOG.md
+LICENSE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# =================================================================
+# Python Files
+# =================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# =================================================================
+# Virtual Environments
+# =================================================================
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.conda/
+conda-meta/
+
+# =================================================================
+# Testing and Coverage
+# =================================================================
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+htmlcov/
+.coverage
+.nyc_output
+
+# =================================================================
+# Jupyter Notebook
+# =================================================================
+.ipynb_checkpoints
+*.ipynb
+
+# =================================================================
+# Data Files (if large)
+# =================================================================
+*.csv
+*.json
+*.parquet
+*.pkl
+*.pickle
+*.h5
+*.hdf5
+data/
+datasets/
+logs/
+*.log
+
+# =================================================================
+# Docker Files (to avoid recursion)
+# =================================================================
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+
+# =================================================================
+# OS Files
+# =================================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.tmp
+*.temp
+
+# =================================================================
+# Node.js (if you have any frontend components)
+# =================================================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =================================================================
+# Streamlit Specific
+# =================================================================
+.streamlit/config.toml
+.streamlit/credentials.toml
+
+# =================================================================
+# Kafka/Confluent Specific
+# =================================================================
+*.properties
+kafka.conf
+confluent.conf
+
+# =================================================================
+# Documentation and Examples
+# =================================================================
+docs/
+examples/
+screenshots/
+*.png
+*.jpg
+*.gif
+demo/
+
+# =================================================================
+# CI/CD Files
+# =================================================================
+.github/
+.gitlab-ci.yml
+.travis.yml
+.circleci/
+Jenkinsfile
+azure-pipelines.yml
+
+# =================================================================
+# Package Manager Files (keep requirements.txt)
+# =================================================================
+Pipfile
+Pipfile.lock
+poetry.lock
+pyproject.toml
+
+# =================================================================
+# Database Files
+# =================================================================
+*.db
+*.sqlite
+*.sqlite3
+
+# =================================================================
+# Backup Files
+# =================================================================
+*.bak
+*.backup
+*.old
+*.orig
