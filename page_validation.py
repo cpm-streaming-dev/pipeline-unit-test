@@ -425,14 +425,53 @@ def display_validation_results(results, real_time=False):
             filtered_results = test_results
             sorted_cases = sorted(filtered_results.keys())
 
-        # Display results immediately
-        for case_num in sorted_cases:
-            result = filtered_results[case_num]
+        # Single expander with selectbox for test cases
+        if sorted_cases:
+            with st.expander("🔍 Test Case Details", expanded=True):
+                # Initialize selected case if not exists
+                if 'selected_test_case' not in st.session_state:
+                    st.session_state['selected_test_case'] = sorted_cases[0]
 
-            with st.expander(
-                f"TEST_CASE_{case_num:02d} - {'✅ PASSED' if result['passed'] else '❌ FAILED'}",
-                expanded=not result['passed']
-            ):
+                # Create selectbox options as "Case 1", "Case 2", etc.
+                case_options = [f"Case {case}" for case in sorted_cases]
+                case_display_to_num = {
+                    f"Case {case}": case for case in sorted_cases}
+
+                # Find current selection index
+                current_case_display = f"Case {st.session_state['selected_test_case']}"
+                if current_case_display not in case_options:
+                    current_case_display = case_options[0]
+                    st.session_state['selected_test_case'] = sorted_cases[0]
+
+                mode_key = "realtime" if real_time else "static"
+
+                def on_case_change():
+                    st.session_state['selected_test_case'] = case_display_to_num[
+                        st.session_state[
+                            f"test_case_selector_{mode_key}_{'_'.join(map(str, sorted_cases))}"]
+                    ]
+
+                selected_case_display = st.selectbox(
+                    "Select Test Case:",
+                    case_options,
+                    index=case_options.index(current_case_display),
+                    key=f"test_case_selector_{mode_key}_{'_'.join(map(str, sorted_cases))}",
+                    # key="test_case_selector",
+                    on_change=on_case_change
+                )
+
+                # Get the actual case number from the display name
+                selected_case_num = st.session_state.get(
+                    'selected_test_case', sorted_cases[0])
+
+                # Display the selected test case result
+                result = filtered_results[selected_case_num]
+
+                # Show status header
+                status_text = '✅ PASSED' if result['passed'] else '❌ FAILED'
+                st.markdown(
+                    f"### TEST_CASE_{selected_case_num:02d} - {status_text}")
+
                 info_col, details_col = st.columns([1, 2])
 
                 with info_col:
